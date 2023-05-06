@@ -4,7 +4,7 @@ export function Footer () {
         <div>
             <footer className="footer">
 				<p className="text-footer">
-					Copyright ©-All rights are reserved
+					Copyright ©-All rights are reserved Psi&Mačke 2023
 				</p>
 	        </footer>
         </div>

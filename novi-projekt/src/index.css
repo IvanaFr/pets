@@ -21,7 +21,8 @@ margin-bottom: 5px;
 }
 
 .logo img {
-	width: 180px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50px;
 }
 
@@ -109,4 +110,30 @@ background-color: #000;
 	display: flex;
 	justify-content: center;
 	color: #fff;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.contactForm {
+	border: 1px solid #ccc;
+    padding: 20px;
+	margin: 10px;
+    border-radius: 10px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: #b6a2a2;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+input, textarea {
+	border-radius: 10px;
 }

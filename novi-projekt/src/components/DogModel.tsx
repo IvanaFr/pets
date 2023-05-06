@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { GLTFLoader } from 'three-gltf-loader';
+import GLTFLoader  from 'three-gltf-loader';
+import { Scene } from 'three';
 import axios from 'axios';
 
 function DogModel() {
-  const [dogModel, setDogModel] = useState(null);
+  const [dogModel, setDogModel] = useState <Scene | null>(null);
 
   useEffect(() => {
     async function fetchDogModel() {
@@ -27,4 +28,5 @@ function DogModel() {
 }
 
 export default DogModel;
+
 

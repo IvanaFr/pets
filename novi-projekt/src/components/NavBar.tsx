@@ -1,4 +1,3 @@
-import React from 'react';
 import {
 Nav,
 NavLink,
@@ -14,7 +13,9 @@ return (
 	<>
 	<Nav>
 		<Bars />
-		<img src={logo} alt="Logo" />
+		<NavLink to="/">
+		    <img src={logo} alt="Logo"  style={{ height: '50px', width: '50px' }} />
+		</NavLink>
 		<NavMenu>
 		<NavLink to='/about' >
 			O nama

@@ -1,4 +1,4 @@
-
+import { ContactForm } from "../components/ContactForm";
 
 export function Onama () {
     
@@ -53,26 +53,7 @@ export function Onama () {
 						<h1 className="text-big" id="program">
 							KONTAKTIRAJTE NAS!
 						</h1>
-						<form>
-                            <label>Ime i prezime:</label>
-                            <input
-                              id="name"
-                              type="text"
-                              required
-                            />
-                            <label>E-mail adresa:</label>
-                            <input
-                              id="email"
-                              type="email"
-                              required
-                            />
-                            <label>Poruka:</label>
-                            <textarea
-                              id="message"                            
-                              required
-                            />
-                            <button type="submit">Pošalji</button>
-                        </form>						
+						<ContactForm />						
 					</div>
 				</div>
 			</section>

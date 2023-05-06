@@ -54,7 +54,7 @@ white-space: nowrap; */
 }
 `;
 
-{/*export const NavBtn = styled.nav`
+export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
 margin-right: 24px;
@@ -64,7 +64,7 @@ width: 100vw;
 @media screen and (max-width: 768px) {
 	display: none;
 }
-`;*
+`;
 
 export const NavBtnLink = styled(Link)`
 border-radius: 4px;
@@ -83,4 +83,4 @@ margin-left: 24px;
 	background: #fff;
 	color: #808080;
 }
-`;*/}
+`;
