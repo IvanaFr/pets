@@ -1,33 +1,30 @@
-import data from "../data/data.json";
-console.log(data.donacije);
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Donacije () {
-  const [podatak, postaviPodatak] = useState({
-    id: null,
-    kategorija: "",
-    opis: "",
-    tip: "",
-    vrijednost: null,
-  });
+  const [podatak, postaviPodatak] = useState([]);
 
-  function dohvatiPodatke() {
-    axios.get("./data/data.json")
-      .then(res => postaviPodatak(res.data.donacije[0]))
-      .catch(err => console.log(err));
-  }
-  
-    
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/donacije")
+      .then(res => postaviPodatak(res.data))      
+  }, []);
+      
     return (
       <div>
       <h1>Dohvat podataka</h1>
-      <button onClick={dohvatiPodatke}>Dohvati podatke</button>
       <div>
-        <h3>{podatak.kategorija}</h3>
-        <p>{podatak.opis}</p>
-        <p>{podatak.tip}</p>
-        <p>{podatak.vrijednost}</p>
+        {podatak.map(podatak => {
+          return (
+            <div>
+              <h3>{podatak.kategorija}</h3>
+              <p>{podatak.opis}</p>
+              <p>{podatak.tip}</p>
+              <p>{podatak.vrijednost}</p>
+            </div>
+            )
+        })}
+              
       </div>
     </div>
     )
