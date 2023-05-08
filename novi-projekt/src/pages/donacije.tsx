@@ -12,11 +12,11 @@ export function Donacije () {
       
     return (
       <div>
-      <h1>Dohvat podataka</h1>
+      <h1>Donacije</h1>
       <div>
         {podatak.map(podatak => {
           return (
-            <div>
+            <div key={podatak.id}>
               <h3>{podatak.kategorija}</h3>
               <p>{podatak.opis}</p>
               <p>{podatak.tip}</p>

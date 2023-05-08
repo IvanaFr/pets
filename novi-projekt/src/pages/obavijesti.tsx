@@ -12,11 +12,11 @@ export function Obavijesti () {
       
     return (
       <div>
-      <h1>Dohvat podataka</h1>
+      <h1>Obavijesti</h1>
       <div>
         {podatak.map(podatak => {
           return (
-            <div>
+            <div key={podatak.id}>
               <h3>{podatak.naslov}</h3>
               <p>{podatak.datum}</p>
               <p>{podatak.tekst}</p>
