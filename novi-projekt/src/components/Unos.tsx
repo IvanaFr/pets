@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function Unos() {
+function Unos(props) {
  const [formaPodaci, postaviPodatke] = useState({
  ime: "",
  vrsta: "", 
@@ -11,8 +11,7 @@ function Unos() {
  });
 
  function obradiPodatke(objekt){
-    return {
-       "zivotinja" : {
+    return {        
         "ime" : objekt.ime,
         "vrsta": objekt.vrsta,
         "cip" : Boolean (objekt.cip),
@@ -20,7 +19,6 @@ function Unos() {
         "opis" : objekt.opis,
         "pregled" : objekt.pregled,
         "udomljen" : Boolean (objekt.udomljen)
-      }
     }
   }
 
@@ -31,9 +29,10 @@ function Unos() {
     const zaSlanje = obradiPodatke(formaPodaci)
     
     axios.post('http://localhost:3001/zivotinje', zaSlanje)
-    .then(rez => console.log(rez))
-  };
-
+    .then(rez =>  {
+      props.dodaj(stanje => [...stanje, rez.data])
+  });
+}
  function promjenaUlaza(event) {
     const { name, value } = event.target;
   postaviPodatke({ ...formaPodaci, [name]: value });
@@ -75,7 +74,6 @@ function Unos() {
           name='cip'
           checked={formaPodaci.cip}
           onChange={promjenaUlaza}
-          required
         />
       </label>
     </div>
@@ -123,7 +121,6 @@ function Unos() {
           name='udomljen'
           checked={formaPodaci.udomljen}
           onChange={promjenaUlaza}
-          required
         />
       </label>
     </div>
