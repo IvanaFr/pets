@@ -8,6 +8,8 @@ import {
 } from "./NavbarElements";
 import logo from "../assets/logo.png";
 
+import RoleCheckbox from "./RoleCheckbox";
+
 const Navbar = () => {
     return (
         <>
@@ -25,15 +27,8 @@ const Navbar = () => {
                     <NavLink to="/popis">Popis</NavLink>
                     <NavLink to="/donacije">Donacije</NavLink>
                     <NavLink to="/obavijesti">Obavijesti</NavLink>
-                    {/*<NavLink to='/sign-up' >
-			Sign Up
-</NavLink>*/}
-                    {/* Second Nav */}
-                    {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+                    <RoleCheckbox />
                 </NavMenu>
-                {/*<NavBtn>
-		<NavBtnLink to='/signin'>Sign In</NavBtnLink>
-</NavBtn>*/}
             </Nav>
         </>
     );
