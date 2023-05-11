@@ -3,21 +3,29 @@ import { useEffect, useState } from "react";
 import Unos from "../components/Unos";
 import logo from "../assets/logo.png";
 
-export function Popis() {
+export function Popis2() {
     const [podatak, postaviPodatak] = useState([]);
     const [vrsta, postaviVrstu] = useState("");
     const [udomljen, postaviUdomljen] = useState(false);
     const [pretraga, postaviPretragu] = useState("");
 
     useEffect(() => {
-        axios
-            .get("http://localhost:3001/zivotinje")
-            .then((res) => postaviPodatak(res.data));
-    }, []);
+        let url = "http://localhost:3001/zivotinje";
+        if (vrsta !== "") {
+            url += `?vrsta=${vrsta}`;
+        }
+        if (udomljen !== null) {
+            const status = udomljen ? "udomljen" : "nijeudomljen";
+            url += `${vrsta === "" ? "?" : "&"}status=${status}`;
+        }
 
-    const filtriraj = podatak.filter((podatak) => {
+        axios.get(url).then((res) => postaviPodatak(res.data));
+    }, [vrsta, udomljen]);
+
+    const filtriraj = (podatak) => {
         if (
-           
+            podatak.ime.toLowerCase().includes(pretraga.toLowerCase()) ||
+            podatak.vrsta.toLowerCase().includes(pretraga.toLowerCase())
         ) {
             return true;
         }
