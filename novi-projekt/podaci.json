@@ -1,5 +1,34 @@
 {
-  "obavijesti": [],
+  "obavijesti": [
+    {
+      "id": 1,
+      "naslov": "Svečano otvorenje",
+      "datum": "2023-04-17",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
+      "vazno": true
+    },
+    {
+      "id": 2,
+      "naslov": "Međunarodni dan životinja",
+      "datum": "2023-02-28",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
+      "vazno": false
+    },
+    {
+      "id": 3,
+      "naslov": "Nešto tako",
+      "datum": "2023-03-17",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
+      "vazno": true
+    },
+    {
+      "id": 6,
+      "naslov": "Međunarodni dan mačaka",
+      "datum": "2023-02-11",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
+      "vazno": false
+    }
+  ],
   "donacije": [
     {
       "id": 1,
@@ -49,6 +78,34 @@
       "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
       "vazno": false,
       "id": 7
+    },
+    {
+      "naslov": "Međunarodni dan mača",
+      "datum": "2023-03-15",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
+      "vazno": true,
+      "id": 8
+    },
+    {
+      "naslov": "Međunarodni dan mača",
+      "datum": "2023-05-11",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
+      "vazno": true,
+      "id": 9
+    },
+    {
+      "naslov": "Međunarodni dan mača",
+      "datum": "2023-05-02",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
+      "vazno": true,
+      "id": 10
+    },
+    {
+      "naslov": "Međunarodni dan mača",
+      "datum": "2023-05-02",
+      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
+      "vazno": true,
+      "id": 11
     }
   ],
   "zivotinje": [
@@ -70,7 +127,7 @@
       "godine": 50,
       "opis": "Više od običnog psa",
       "pregled": "2000-02-13",
-      "udomljen": true
+      "udomljen": false
     },
     {
       "ime": "ARI",
@@ -89,7 +146,7 @@
       "godine": 7,
       "opis": "razigrana",
       "pregled": "25.02.2023",
-      "udomljen": false,
+      "udomljen": true,
       "id": 4
     },
     {

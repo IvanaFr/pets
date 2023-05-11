@@ -35,7 +35,7 @@ function UnosObavijesti(props) {
 
     return (
         <form onSubmit={saljiPodatke}>
-            <p>Unos donacija</p>
+            <h1>Nova obavijest</h1>
             <div>
                 <label>
                     Naslov:

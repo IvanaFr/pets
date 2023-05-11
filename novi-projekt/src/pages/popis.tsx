@@ -2,12 +2,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Unos from "../components/Unos";
 import logo from "../assets/logo.png";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 export function Popis() {
+    const { userRole } = useContext(UserContext);
+
     const [podatak, postaviPodatak] = useState([]);
     const [vrsta, postaviVrstu] = useState("");
     const [udomljen, postaviUdomljen] = useState("");
     const [pretraga, postaviPretragu] = useState("");
+    const [showUnos, setShowUnos] = useState(false);
 
     useEffect(() => {
         let url = "http://localhost:3001/zivotinje";
@@ -41,9 +46,32 @@ export function Popis() {
         }
     };
 
+    const handleClick = () => {
+        setShowUnos(true);
+    };
+
+    const handlePromjenaOznake = (id, udomljen) => {
+        if (userRole === "admin") {
+            axios
+                .patch(`http://localhost:3001/zivotinje/${id}`, {
+                    udomljen: !udomljen,
+                })
+                .then(() => {
+                    const noviPodaci = podaci.map((podatak) => {
+                        if (podatak.id === id) {
+                            podatak.udomljen = !udomljen;
+                        }
+                        return podatak;
+                    });
+                    postaviPodatke(noviPodaci);
+                });
+        }
+    };
+
     return (
         <div>
-            <Unos dodaj={postaviPodatak} />
+            {showUnos && <Unos dodaj={postaviPodatke} />}
+
             <h1>Popis Životinja</h1>
             <div>
                 <label>Vrsta:</label>
@@ -78,7 +106,15 @@ export function Popis() {
                 <div className="kartice">
                     {podatak.filter(filtriraj).map((podatak) => {
                         return (
-                            <div className="kartica" key={podatak.id}>
+                            <div
+                                className="kartica"
+                                key={podatak.id}
+                                style={{
+                                    backgroundColor: podatak.udomljen
+                                        ? "#ec3d63"
+                                        : "#53ce68",
+                                }}
+                            >
                                 <div className="kartica1">
                                     <div className="kartica-slika">
                                         <img src={logo} alt={podatak.ime} />
@@ -88,12 +124,25 @@ export function Popis() {
                                         <p>Vrsta: {podatak.vrsta}</p>
                                         <p>Godine: {podatak.godine}</p>
                                     </div>
-                                    <p className="kartica-status">
-                                        Status:
-                                        {podatak.udomljen
-                                            ? "Udomljen"
-                                            : "Nije udomljen"}
-                                    </p>
+                                    <div>
+                                        {podatak.udomljen && (
+                                            <p className="kartica-status">
+                                                UDOMLJEN
+                                            </p>
+                                        )}
+                                        <button
+                                            onClick={() =>
+                                                handlePromjenaOznake(
+                                                    podatak.id,
+                                                    podatak.udomljen
+                                                )
+                                            }
+                                        >
+                                            {podatak.udomljen
+                                                ? ""
+                                                : "Nije udomljen"}
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className="kartica2">
                                     <div className="kartica-opis">
