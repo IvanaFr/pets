@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import Unos from "../components/Unos";
 import logo from "../assets/logo.png";
 
-export function Popis2() {
+export function Popis() {
     const [podatak, postaviPodatak] = useState([]);
     const [vrsta, postaviVrstu] = useState("");
-    const [udomljen, postaviUdomljen] = useState(false);
+    const [udomljen, postaviUdomljen] = useState("");
     const [pretraga, postaviPretragu] = useState("");
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export function Popis2() {
         if (vrsta !== "") {
             url += `?vrsta=${vrsta}`;
         }
-        if (udomljen !== null) {
+        if (udomljen !== "") {
             const status = udomljen ? "udomljen" : "nijeudomljen";
             url += `${vrsta === "" ? "?" : "&"}status=${status}`;
         }
@@ -30,7 +30,14 @@ export function Popis2() {
             return true;
         }
         {
-            return false;
+            if (udomljen !== "") {
+                if (udomljen && !podatak.udomljen) {
+                    return false; // životinja nije udomljena, a tražimo samo udomljene
+                } else if (!udomljen && podatak.udomljen) {
+                    return false; // životinja je udomljena, a tražimo neudomljene
+                }
+            }
+            return true;
         }
     };
 
@@ -82,7 +89,10 @@ export function Popis2() {
                                         <p>Godine: {podatak.godine}</p>
                                     </div>
                                     <p className="kartica-status">
-                                        Status: {podatak.udomljen}
+                                        Status:
+                                        {podatak.udomljen
+                                            ? "Udomljen"
+                                            : "Nije udomljen"}
                                     </p>
                                 </div>
                                 <div className="kartica2">
@@ -90,6 +100,11 @@ export function Popis2() {
                                         <p>Opis: {podatak.opis}</p>
                                     </div>
                                 </div>
+                                <button
+                                    onClick={() => udomiZivotinju(podatak.id)}
+                                >
+                                    Udomi
+                                </button>
                             </div>
                         );
                     })}

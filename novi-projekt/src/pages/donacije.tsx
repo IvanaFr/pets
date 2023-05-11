@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import UnosDonacije from "../components/UnosDonacije";
 
 export function Donacije() {
     const [podatak, postaviPodatak] = useState([]);
@@ -12,6 +13,7 @@ export function Donacije() {
 
     return (
         <div>
+            <UnosDonacije dodaj={postaviPodatak} />
             <h1>Donacije</h1>
             <div>
                 {podatak.map((podatak) => {
