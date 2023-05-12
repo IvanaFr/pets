@@ -56,13 +56,16 @@ function Unos(props) {
                 <div>
                     <label>
                         Vrsta:
-                        <input
-                            type="text"
+                        <select
                             name="vrsta"
                             value={formaPodaci.vrsta}
                             onChange={promjenaUlaza}
                             required
-                        />
+                        >
+                            <option value="">Odaberite vrstu</option>
+                            <option value="mačka">Mačka</option>
+                            <option value="pas">Pas</option>
+                        </select>
                     </label>
                 </div>
                 <div>
@@ -96,7 +99,6 @@ function Unos(props) {
                             name="opis"
                             value={formaPodaci.opis}
                             onChange={promjenaUlaza}
-                            required
                         />
                     </label>
                 </div>
@@ -108,7 +110,6 @@ function Unos(props) {
                             name="pregled"
                             value={formaPodaci.pregled}
                             onChange={promjenaUlaza}
-                            required
                         />
                     </label>
                 </div>
