@@ -9,8 +9,12 @@ import {
 import logo from "../assets/logo.png";
 
 import RoleCheckbox from "./RoleCheckbox";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
+    const { adminRole } = useContext(UserContext);
+
     return (
         <>
             <Nav>
@@ -27,6 +31,7 @@ const Navbar = () => {
                     <NavLink to="/popis">Popis</NavLink>
                     <NavLink to="/donacije">Donacije</NavLink>
                     <NavLink to="/obavijesti">Obavijesti</NavLink>
+                    {adminRole && <NavLink to="/unos">Unos</NavLink>}
                     <RoleCheckbox />
                 </NavMenu>
             </Nav>

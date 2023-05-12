@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const RoleCheckbox = () => {
-    const { userRole, toggleUserRole } = useContext(UserContext);
+    const { adminRole, toggleAdminRole } = useContext(UserContext);
 
     return (
         <div>
@@ -10,8 +10,8 @@ const RoleCheckbox = () => {
             <input
                 type="checkbox"
                 id="roleCheckbox"
-                checked={userRole === "admin"}
-                onChange={toggleUserRole}
+                checked={adminRole === "admin"}
+                onChange={toggleAdminRole}
             />
         </div>
     );

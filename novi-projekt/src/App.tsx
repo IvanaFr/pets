@@ -7,6 +7,7 @@ import { Onama } from "./pages/o-nama";
 import { Donacije } from "./pages/donacije";
 import { Popis } from "./pages/popis";
 import { Footer } from "./components/Footer";
+import Unos from "./pages/unos";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/popis" element={<Popis />} />
                     <Route path="/donacije" element={<Donacije />} />
                     <Route path="/obavijesti" element={<Obavijesti />} />
+                    <Route path="/unos" element={<Unos />} />
                 </Routes>
             </Router>
             <Footer />

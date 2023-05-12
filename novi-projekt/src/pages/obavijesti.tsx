@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 export function Obavijesti() {
-    const { userRole } = useContext(UserContext);
+    const { adminRole } = useContext(UserContext);
 
     const [podaci, postaviPodatke] = useState([]);
     const [showUnosObavijesti, setShowUnosObavijesti] = useState(false);
@@ -24,7 +24,7 @@ export function Obavijesti() {
     };
 
     const handlePromjenaOznake = (id, vazno) => {
-        if (userRole === "admin") {
+        if (adminRole === "admin") {
             axios
                 .patch(`http://localhost:3001/obavijesti/${id}`, {
                     vazno: !vazno,
@@ -42,7 +42,7 @@ export function Obavijesti() {
     };
 
     const handleBrisanje = (id) => {
-        if (userRole === "admin") {
+        if (adminRole === "admin") {
             axios.delete(`http://localhost:3001/obavijesti/${id}`).then(() => {
                 const noviPodaci = podaci.filter(
                     (podatak) => podatak.id !== id

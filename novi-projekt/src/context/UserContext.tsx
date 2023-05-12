@@ -3,14 +3,14 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-    const [userRole, setUserRole] = useState("user");
+    const [adminRole, setAdminRole] = useState("user");
 
-    const toggleUserRole = () => {
-        setUserRole(userRole === "user" ? "admin" : "user");
+    const toggleAdminRole = () => {
+        setAdminRole(adminRole === "user" ? "admin" : "user");
     };
 
     return (
-        <UserContext.Provider value={{ userRole, toggleUserRole }}>
+        <UserContext.Provider value={{ adminRole, toggleAdminRole }}>
             {props.children}
         </UserContext.Provider>
     );

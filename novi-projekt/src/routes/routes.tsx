@@ -1,5 +1,3 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { createBrowserRouter } from "react-router-dom";
 
 import { Home } from "../pages/home";
@@ -7,6 +5,7 @@ import { Popis } from "../pages/popis";
 import { Obavijesti } from "../pages/obavijesti";
 import { Donacije } from "../pages/donacije";
 import { Onama } from "../pages/o-nama";
+import Unos from "../pages/unos";
 
 const routes = createBrowserRouter([
     {
@@ -28,6 +27,10 @@ const routes = createBrowserRouter([
     {
         path: "/donacije",
         element: <Donacije />,
+    },
+    {
+        path: "/unos",
+        element: <Unos />,
     },
 ]);
 

@@ -41,7 +41,10 @@ export function Onama() {
                             Gdje se nalazimo
                         </h1>
                         <div id="map">
-                            <a href="https://goo.gl/maps/g1XRQLn17V7bHYqt5">
+                            <a
+                                href="https://goo.gl/maps/g1XRQLn17V7bHYqt5"
+                                target="_blank"
+                            >
                                 Pronađite nas na mapi
                             </a>
                         </div>

@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import { UserContext } from "../context/UserContext";
 
 function UnosDonacije(props) {
+    const { adminRole } = useContext(UserContext);
+
     const [formaPodaci, postaviPodatke] = useState({
         kategorija: "",
         tip: "",

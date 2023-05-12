@@ -1,18 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Unos from "../components/Unos";
 import logo from "../assets/logo.png";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 export function Popis() {
-    const { userRole } = useContext(UserContext);
+    const { adminRole } = useContext(UserContext);
 
     const [podatak, postaviPodatak] = useState([]);
     const [vrsta, postaviVrstu] = useState("");
     const [udomljen, postaviUdomljen] = useState("");
     const [pretraga, postaviPretragu] = useState("");
-    const [showUnos, setShowUnos] = useState(false);
+    const [showUdomi, setShowUdomi] = useState(false);
 
     useEffect(() => {
         let url = "http://localhost:3001/zivotinje";
@@ -51,7 +50,8 @@ export function Popis() {
     };
 
     const handlePromjenaOznake = (id, udomljen) => {
-        if (userRole === "admin") {
+        console.log(handlePromjenaOznake());
+        if (adminRole === "admin") {
             axios
                 .patch(`http://localhost:3001/zivotinje/${id}`, {
                     udomljen: !udomljen,
@@ -70,8 +70,6 @@ export function Popis() {
 
     return (
         <div>
-            {showUnos && <Unos dodaj={postaviPodatke} />}
-
             <h1>Popis Životinja</h1>
             <div>
                 <label>Vrsta:</label>
@@ -138,9 +136,7 @@ export function Popis() {
                                                 )
                                             }
                                         >
-                                            {podatak.udomljen
-                                                ? ""
-                                                : "Nije udomljen"}
+                                            {podatak.udomljen ? "" : "Udomi"}
                                         </button>
                                     </div>
                                 </div>
@@ -149,11 +145,6 @@ export function Popis() {
                                         <p>Opis: {podatak.opis}</p>
                                     </div>
                                 </div>
-                                <button
-                                    onClick={() => udomiZivotinju(podatak.id)}
-                                >
-                                    Udomi
-                                </button>
                             </div>
                         );
                     })}
