@@ -32,81 +32,25 @@
   "donacije": [
     {
       "id": 1,
-      "kategorija": "donirano",
+      "kategorija" : "donirano",
       "tip": "Hrana",
       "vrijednost": 25,
       "opis": "Suha hrana za pse - 10kg"
-    },
-    {
+  },
+  {
       "id": 2,
-      "kategorija": "trazi",
+      "kategorija" : "trazi",
       "tip": "Igračke",
       "vrijednost": 15,
       "opis": "Grebalica za mačke"
-    },
-    {
+  },
+  {
       "id": 3,
-      "kategorija": "nudi",
+      "kategorija" : "nudi",
       "tip": "Ostalo",
       "vrijednost": 25,
       "opis": "Kavez za srednje papige"
-    },
-    {
-      "naslov": "Udomi životinju",
-      "datum": 0,
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
-      "vazno": false,
-      "id": 4
-    },
-    {
-      "naslov": "Udomi životinju",
-      "datum": "2023-01-11",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": false,
-      "id": 5
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-02-15",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": false,
-      "id": 6
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-02-15",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": false,
-      "id": 7
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-03-15",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": true,
-      "id": 8
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-05-11",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": true,
-      "id": 9
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-05-02",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": true,
-      "id": 10
-    },
-    {
-      "naslov": "Međunarodni dan mača",
-      "datum": "2023-05-02",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet ",
-      "vazno": true,
-      "id": 11
-    }
+  }
   ],
   "zivotinje": [
     {

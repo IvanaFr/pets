@@ -69,7 +69,6 @@ function UnosObavijesti(props) {
                         name="tekst"
                         value={formaPodaci.tekst}
                         onChange={promjenaUlaza}
-                        required
                         minLength="10"
                         maxLength="200"
                     ></textarea>

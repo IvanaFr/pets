@@ -42,25 +42,34 @@ function UnosDonacije(props) {
             <div>
                 <label>
                     Kategorija:
-                    <input
-                        type="text"
+                    <select
                         name="kategorija"
                         value={formaPodaci.kategorija}
                         onChange={promjenaUlaza}
                         required
-                    />
+                    >
+                        <option value="">Odaberite kategoriju</option>
+                        <option value="tražimo">Tražimo</option>
+                        <option value="nudi se">Nudi se</option>
+                        <option value="donirano">Donirano</option>
+                    </select>
                 </label>
             </div>
             <div>
                 <label>
                     Tip:
-                    <input
-                        type="text"
+                    <select
                         name="tip"
                         value={formaPodaci.tip}
                         onChange={promjenaUlaza}
                         required
-                    />
+                    >
+                        <option value="">Tip donacije</option>
+                        <option value="hrana">Hrana</option>
+                        <option value="ljekovi">Ljekovi</option>
+                        <option value="igračke">Igračkee</option>
+                        <option value="troškov">Vet. troškovi</option>
+                    </select>
                 </label>
             </div>
             <div>
@@ -83,7 +92,6 @@ function UnosDonacije(props) {
                         name="opis"
                         value={formaPodaci.opis}
                         onChange={promjenaUlaza}
-                        required
                     />
                 </label>
             </div>
